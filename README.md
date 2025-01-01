@@ -1,16 +1,42 @@
-## Hi there 👋
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>кодове речення......</h1>
+    <p>сюди пиши відповідь (з великої букви!!!)</p>
+    <input type="text" id="answer" placeholder="сюдиии">
+    <button onclick="checkAnswer()">перевірка</button>
+    <p class="result" id="result"></p>
 
-<!--
-**cringecodesentence/cringecodesentence** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+    <script>
+        function checkAnswer() {
+            const correctAnswer = "Влітку Санта Клаус підпрацьовує Петром Порошенком";
+            const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+            const result = document.getElementById("result");
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+            if (userAnswer === correctAnswer.toLowerCase()) {
+                result.textContent = "непогано... продовжимо розмову тут: посилання";
+                result.style.color = "black";
+            } else {
+                result.textContent = "неправильно!!! мухахахаха!! даю ще одну спробу";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
